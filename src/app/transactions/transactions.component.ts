@@ -1,5 +1,5 @@
 import { TransactionService } from './../transaction.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, numberAttribute, OnInit } from '@angular/core';
 import { Transaction } from '../transaction';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -11,20 +11,35 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class TransactionsComponent implements OnInit{
 
   transactions!: Transaction[];
+  
 
   constructor(private transactionService: TransactionService, private router: Router, private route: ActivatedRoute){}
 
   ngOnInit(): void {
-    this.getTransaction();    
+    this.getTransaction();   
+  
   }
 
   private getTransaction(){
     
-    this.transactionService.getAllTransactions().subscribe(data => {
-      //console.log("data is "+data[0].accountnum);
-      this.transactions = data;
-      //console.log(this.transactions);
+     var i:number = 0;
+     var j:number = 0;
 
+    this.transactionService.getAllTransactions().subscribe(data => {
+      
+      this.transactions = data;
+      j = this.transactions.length;
+
+      for(i;i<j;i++){      
+        console.log(" "+this.transactions[i].debit);
+        if(this.transactions[i].debit == '0') {
+          this.transactions[i].debit = ' ';
+        }
+        else if(this.transactions[i].credit == '0') {
+          this.transactions[i].credit = ' ';
+      }
+    }
+    
     });
     
   }

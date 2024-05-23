@@ -3,8 +3,8 @@ export class Transaction{
     accountnum!: number;
     date!: Date;
     refOrcheckNo!: string;
-    debit!: number;
-    credit!: number;
+    debit!: string;
+    credit!: string;
     balance!: number;   
 
 }
