@@ -1,0 +1,19 @@
+.table{
+    background-color:white;
+    width: 80%;
+    border-bottom: 5px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;    
+}
+
+.table thead th {
+    background-color:rgb(235, 230, 230);
+}
+
+.table tr td {
+    height: 1px;
+    padding: .10rem;
+    
+    
+  }
