@@ -1,6 +1,6 @@
 export class Transaction{
-    id!: number;
     accountnum!: number;
+    transactionID!: string;
     date!: Date;
     refOrcheckNo!: string;
     debit!: string;

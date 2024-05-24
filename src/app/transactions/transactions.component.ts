@@ -16,8 +16,7 @@ export class TransactionsComponent implements OnInit{
   constructor(private transactionService: TransactionService, private router: Router, private route: ActivatedRoute){}
 
   ngOnInit(): void {
-    this.getTransaction();   
-  
+    this.getTransaction();
   }
 
   private getTransaction(){
@@ -30,8 +29,7 @@ export class TransactionsComponent implements OnInit{
       this.transactions = data;
       j = this.transactions.length;
 
-      for(i;i<j;i++){      
-        console.log(" "+this.transactions[i].debit);
+      for(i;i<j;i++){
         if(this.transactions[i].debit == '0') {
           this.transactions[i].debit = ' ';
         }
