@@ -19,7 +19,7 @@ export class TransactionsComponent implements OnInit{
     this.getTransaction();
   }
 
-  private getTransaction(){
+    private getTransaction(){
     
      var i:number = 0;
      var j:number = 0;
